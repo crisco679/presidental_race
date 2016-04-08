@@ -5,19 +5,23 @@
     <title>Presidental Race</title>
     <script src="angular.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body ng-controller="PresidentController">
-    <h1>Presidental Race</h1>
+    <h1>Presidental <span class="header">DANGER! </span>Race</h1>
     <button ng-click="generateCandidates()">Generate</button>
-    <div ng-show="buttonClicked">
     <button ng-click="pickPresident()">Pick a President</button>
-    <h1>Winners Circle</h1>
-    <h2>Democrats:</h2> <br />
+    <div ng-show="buttonClicked">
+      <div class="demRep">
+      <div class="democraticPeople">
+    <h2>Democrats:</h2>
     <ul>
       <li ng-repeat="candidate in democrats">
       {{candidate}}
     </li>
     </ul>
+      </div>
+    <div class="republicanPeople">
     <h2>Republicans:</h2>
     <ul>
       <li ng-repeat="candidate in republicans">
@@ -25,5 +29,10 @@
       </li>
     </ul>
   </div>
+</div>
+</div>
+<div ng-show="showWinner" class="winnerCircle">
+ {{winner}} wins!
+</div>
   </body>
 </html>

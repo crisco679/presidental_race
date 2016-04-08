@@ -2,28 +2,21 @@ var app = angular.module('presidentalApp', [])
 
 app.controller('PresidentController', function($scope, $http){
   $scope.buttonClicked = false;
-  $scope.message = "Presidental Race!";
   $scope.democrats = [];
   $scope.republicans = [];
+  $scope.showWinner = false;
+  
 
 
 
   $scope.pickPresident = function(){
+    $scope.showWinner = true;
     $scope.myArray = $scope.democrats.concat($scope.republicans);
     console.log($scope.myArray);
     $scope.rand = Math.floor(Math.random() * $scope.myArray.length);
     console.log($scope.rand)
-      if($scope.rand === 0){
-        console.log("Bernie");
-      }else if($scope.rand === 1){
-        console.log("Hillary");
-      }else if($scope.rand === 2){
-        console.log("Donald");
-      }else if($scope.rand === 3){
-        console.log("Ted");
-      }
-  }
-
+      $scope.winner=$scope.myArray[$scope.rand];
+}
   $scope.generateCandidates = function(){
 
   $http.get('/democrats').then(function(response){
@@ -36,8 +29,6 @@ app.controller('PresidentController', function($scope, $http){
     $scope.republicans = response.data;
     console.log(response);
   });
-  $http.get('/winner').then(function(response){
-    $scope.winner = response.data;
-  });
+
 
 });

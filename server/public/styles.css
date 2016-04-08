@@ -1,0 +1,32 @@
+body{
+  background-image: url("maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500px 800px;
+  color: red;
+}
+.winnerCircle{
+  text-align: center;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+
+}
+.demRep{
+  margin-left: 50px;
+}
+.republicanPeople{
+  width: 200px;
+
+}
+.democraticPeople{
+  width: 200px;
+  float: right;
+
+}
+
+li{
+  color: blue;
+}
+.header{
+  font-style: Impact;
+}
