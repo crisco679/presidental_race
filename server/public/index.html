@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="presidentalApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Presidental Race</title>
+    <script src="angular.min.js"></script>
+    <script src="client.js"></script>
+  </head>
+  <body ng-controller="PresidentController">
+    <h1>Presidental Race</h1>
+    <button ng-click="generateCandidates()">Generate</button>
+    <div ng-show="buttonClicked">
+    <button ng-click="pickPresident()">Pick a President</button>
+    <h1>Winners Circle</h1>
+    <h2>Democrats:</h2> <br />
+    <ul>
+      <li ng-repeat="candidate in democrats">
+      {{candidate}}
+    </li>
+    </ul>
+    <h2>Republicans:</h2>
+    <ul>
+      <li ng-repeat="candidate in republicans">
+        {{candidate}}
+      </li>
+    </ul>
+  </div>
+  </body>
+</html>
